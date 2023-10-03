@@ -40,8 +40,17 @@ const Formulario = () => {
             </MenuItem>
           ))}
 
-        </Select>
-       
+        </Select>        
+      </FormControl>
+
+    </form>
+  )
+}
+
+export default Formulario 
+
+
+       /* En dado caso se necesite el boton de busqueda se iria entre el select y el formcontrol
        <Box sx={{marginTop:2}}> 
           <Button
             fullWidth
@@ -50,11 +59,4 @@ const Formulario = () => {
           >
             Buscar Noticias
           </Button>
-        </Box>
-      </FormControl>
-
-    </form>
-  )
-}
-
-export default Formulario 
+        </Box>  */
