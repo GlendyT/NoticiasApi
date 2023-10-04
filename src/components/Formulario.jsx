@@ -5,6 +5,7 @@ import {
   MenuItem, 
   Button, 
   Box } from "@mui/material"
+import useNoticias from "../hooks/useNoticias"
 
   const CATEGORIAS = [
     { value: 'general', label: 'General'},
@@ -18,12 +19,17 @@ import {
   
 
 const Formulario = () => {
+ 
+   const {categoria, handleChangeCategoria } = useNoticias()
+
   return (
     <form>
       <FormControl fullWidth>
         <InputLabel>Categoria</InputLabel>
         <Select
          label="Categoria"
+         onChange={handleChangeCategoria}
+         value={categoria}
         >
           {CATEGORIAS.map(categoria => (
             <MenuItem
@@ -34,8 +40,17 @@ const Formulario = () => {
             </MenuItem>
           ))}
 
-        </Select>
-       
+        </Select>        
+      </FormControl>
+
+    </form>
+  )
+}
+
+export default Formulario 
+
+
+       /* En dado caso se necesite el boton de busqueda se iria entre el select y el formcontrol
        <Box sx={{marginTop:2}}> 
           <Button
             fullWidth
@@ -44,11 +59,4 @@ const Formulario = () => {
           >
             Buscar Noticias
           </Button>
-        </Box>
-      </FormControl>
-
-    </form>
-  )
-}
-
-export default Formulario 
+        </Box>  */
