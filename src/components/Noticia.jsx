@@ -10,7 +10,6 @@ const Noticia = ({noticia}) => {
 
    const { urlToImage, url, title, description, source } = noticia
 
-   console.log(noticia)
   return (
     <Grid item md={6} lg={4}> 
         <Card>
